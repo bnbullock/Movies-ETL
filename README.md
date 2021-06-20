@@ -9,6 +9,8 @@
   2. Deliverable is
 
 ## Resources
+- Database Client: pgAdmin v5.2
+- Database Server: PostgreSQL v13
 - Data Source(s) : wikipedia-movies.json, ratings.csv, movies_metadata.csv
 - Software: Python 3.7.10, Visual Studio Code 1.56.2, Jupyter Notebook Server 6.3.0
 
