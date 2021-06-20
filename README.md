@@ -32,11 +32,16 @@ The Kaggle data was similarily analyzed and the dataframe of 24 columns were eva
 
 ### Create the Movie Database
 
+Now that we have a reliable and cleaned movie dataframe, we can store this into our PostgreSQL database called movie_data. As such, we create a secure connection to the database and replace the current data in the movies table.
 
 ![DB Movie](images/movies_query.png)
 
+For the ratings data, we delete the ratings table in the SQl database and recreate it from scratch. As the data is loaded feedback is provided via an elapsed messaging progress window as shown below.
+
 ![DB Ratings](images/ratings_query.png)
+
+![Ratings Load](images/ratings_load.png)
 
 ## Overall Summary
 
-
+The overall ETL process allows for the use of reliable and consistent data at the final stage. Further, by loading the final results into a database we can have the data availble for hosting to other users with secure connections. Further, we can continue to update the ratings and the movies tables on an incremental basis as may be required.
