@@ -34,15 +34,15 @@ The Kaggle data was similarily analyzed and the dataframe of 24 columns were eva
 
 ### Create the Movie Database
 
-Now that we have a reliable and cleaned movie dataframe, we can store this into our PostgreSQL database called movie_data. To perform this task, we create a secure connection to the database and replace the current data in the movies table. This can be seen below where the count is determined once the data has been committed to the movies table.
+Now that we have a reliable and cleaned movie dataframe, we can store this into our PostgreSQL database called "movie_data". To perform this task, we create a secure connection to the database and replace the current data in the movies table. This can be seen below where the count is determined once the data has been committed to the movies table.
 
 ![DB Movie](images/movies_query.png)
 
-For the ratings data, we delete the ratings table in the SQL database and recreate it from scratch. The results are shown below in a record count taken from the ratings table once this is completed.
+For the ratings data, we delete the ratings table in the SQL database and recreate it from scratch. The results are shown below and a record count is taken from the ratings table once the data has been loaded.
 
 ![DB Ratings](images/ratings_query.png)
 
-As the data is loaded, feedback is also provided via an elapsed messaging progress window as shown below.
+During the process of loading the ratings data, feedback is provided via an elapsed messaging progress window as shown below.
 
 ![Ratings Load](images/ratings_load.png)
 
