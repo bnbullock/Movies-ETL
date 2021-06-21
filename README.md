@@ -28,22 +28,24 @@ Following from the above process, once all files are read and loaded into datafr
 
 ### Extract and Transform Kaggle data 
 
-The Kaggle data was similarily analyzed and the dataframe of 24 columns were evaluated for inclusion in the final movie dataframe. After formatting columns and removing the not relevant data, the final cleaned kaggle dataframe was merged with the wikipedia final dataframe into a separate movie dataframe. Decisions were made then to remove any unnecessary columns, merging the data intelligently where possible in the movie dataframe, missing data updated accordingly and columns renamed properly. We then look at the ratings dataframe, clean all counts and then merge the movie data with the ratings data creating a movies with ratings dataframe. At this stage where we have merged all 3 files together into a final movies with ratings dataframe, we are then left with 41 cleaned columns that can be trusted as our final data collection. 
+The Kaggle data was similarily analyzed and the dataframe of 24 columns were evaluated for inclusion in the final movie dataframe. After formatting columns and removing the not relevant data, the final cleaned kaggle dataframe was merged with the wikipedia final dataframe into a separate movie dataframe.
+
+ Decisions were made then to remove any unnecessary columns, merging the data intelligently where possible in the movie dataframe, missing data updated accordingly and columns renamed properly. We then looked at the ratings dataframe, clean all counts and then merge the movie data with the ratings data creating a movies with ratings dataframe. At this stage where we have merged all 3 files together into a final movies with ratings dataframe, we are then left with 41 cleaned columns that can be trusted as our final data collection. 
 
 ### Create the Movie Database
 
-Now that we have a reliable and cleaned movie dataframe, we can store this into our PostgreSQL database called movie_data. To perform this task, we create a secure connection to the SQL "movie_data" database and replace the current data in the movies table. This can be seen below where the count is determined once the data has been committed to the movies table.
+Now that we have a reliable and cleaned movie dataframe, we can store this into our PostgreSQL database called movie_data. To perform this task, we create a secure connection to the database and replace the current data in the movies table. This can be seen below where the count is determined once the data has been committed to the movies table.
 
 ![DB Movie](images/movies_query.png)
 
-For the ratings data, we delete the ratings table in the SQl database and recreate it from scratch. The results are shown below in a record count taken from the ratings table once this is sompleted.
+For the ratings data, we delete the ratings table in the SQL database and recreate it from scratch. The results are shown below in a record count taken from the ratings table once this is completed.
 
 ![DB Ratings](images/ratings_query.png)
 
-As the data is loaded feedback is also provided via an elapsed messaging progress window as shown below.
+As the data is loaded, feedback is also provided via an elapsed messaging progress window as shown below.
 
 ![Ratings Load](images/ratings_load.png)
 
 ## Overall Summary
 
-The overall ETL process allows for the use of reliable and consistent data at the final stage. Further, by loading the final results into a database we can have the data availble for hosting to other users with secure connections. We can also continue to update the ratings and the movies tables on an incremental regular basis as may be required in the future.
+The overall ETL process allows for the use of reliable and consistent data at the final stage. Further, by loading the final results into a database we can have the data availble for hosting to other users with secure connections. We can also continue to update the ratings and the movies tables on an incremental on-going basis as may be required in the future.
